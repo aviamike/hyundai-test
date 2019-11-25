@@ -1,12 +1,12 @@
-import { Router } from 'express'
-import { middleware as query } from 'querymen'
-import { middleware as body } from 'bodymen'
-import { create, index, show, update, destroy } from './controller'
-import { schema } from './model'
-export Cars, { schema } from './model'
+import { Router } from "express";
+import { middleware as query } from "querymen";
+import { middleware as body } from "bodymen";
+import { create, index, show, update, destroy } from "./controller";
+import { schema } from "./model";
+export Cars, { schema } from "./model";
 
-const router = new Router()
-const { model, license, reservations } = schema.tree
+const router = new Router();
+const { model, license, reservations } = schema.tree;
 
 /**
  * @api {post} /cars Create cars
@@ -19,9 +19,7 @@ const { model, license, reservations } = schema.tree
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Cars not found.
  */
-router.post('/',
-  body({ model, license, reservations }),
-  create)
+router.post("/", body({ model, license, reservations }), create);
 
 /**
  * @api {get} /cars Retrieve cars
@@ -31,9 +29,7 @@ router.post('/',
  * @apiSuccess {Object[]} cars List of cars.
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
-router.get('/',
-  query(),
-  index)
+router.get("/", query(), index);
 
 /**
  * @api {get} /cars/:id Retrieve cars
@@ -43,8 +39,7 @@ router.get('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Cars not found.
  */
-router.get('/:id',
-  show)
+router.get("/:id", show);
 
 /**
  * @api {put} /cars/:id Update cars
@@ -57,9 +52,7 @@ router.get('/:id',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  * @apiError 404 Cars not found.
  */
-router.put('/:id',
-  body({ model, license, reservations }),
-  update)
+router.put("/:id", body({ model, license, reservations }), update);
 
 /**
  * @api {delete} /cars/:id Delete cars
@@ -68,7 +61,6 @@ router.put('/:id',
  * @apiSuccess (Success 204) 204 No Content.
  * @apiError 404 Cars not found.
  */
-router.delete('/:id',
-  destroy)
+router.delete("/:id", destroy);
 
-export default router
+export default router;

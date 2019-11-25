@@ -1,6 +1,9 @@
 import mongoose, { Schema } from 'mongoose'
 
 const carsSchema = new Schema({
+  _id: {
+    type: String
+  },
   model: {
     type: String
   },
