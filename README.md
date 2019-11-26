@@ -4,13 +4,13 @@ Test task for Hyundai-mobility
 
 ## Commands
 
-npm install
-node car-seeds.js
-npm start
+npm install<br />
+node car-seeds.js<br />
+npm start<br />
 
-// Dev version
-cd react-app-hyundai/
-npm start
+// Dev version<br />
+cd react-app-hyundai/<br />
+npm start<br />
 
-// Build
+// Build<br />
 open build/index.html in browser manually
