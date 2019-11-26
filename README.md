@@ -7,4 +7,10 @@ Test task for Hyundai-mobility
 npm install
 node car-seeds.js
 npm start
-node build/index.html
+
+// Dev version
+cd react-app-hyundai/
+npm start
+
+// Build
+open build/index.html in browser manually
